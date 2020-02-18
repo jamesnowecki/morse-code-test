@@ -1,11 +1,12 @@
+// const turnToLowerCase = (theInitialText) => {
+//     return theInitialText.tolowerCase();
+// }
+
 const turnToLowerCase = (theInitialText) => {
-    return theInitialText.tolowerCase;
+    return theInitialText.tolowerCase();
 }
 
-
 const getsTheMessage = () => {
-
-
 
 
 let message = document.getElementById("message").value;
