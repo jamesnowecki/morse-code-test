@@ -2,7 +2,7 @@ const lowerCaseIt = (theText) => {
     return theText.toLowerCase();
 }
 
-let frog = "CARAVAGGIO"
+let frog = "CATTO"
 
 console.log(lowerCaseIt(frog))
 
