@@ -43,7 +43,7 @@ const lowerCaseIt = (theText) => {
     return theText.toLowerCase();
 }
 
-let frog = "CATTO";
+let theWord = "catto";
 
 // console.log(lowerCaseIt(frog))
 
@@ -57,7 +57,11 @@ const splitString = (stringIn) => {
 
 
 const translateToMorse = (arrayCharacter, morseCode) => {
-    if (arrayCharacter == morseCode.arrayCharacter) {
+    if (morseCode.hasOwnProperty(arrayCharacter)) {
         return morseCode.arrayCharacter;
     }
 }
+
+let splitArray = splitString(theWord);
+
+console.log(splitArray.map(translateToMorse));
