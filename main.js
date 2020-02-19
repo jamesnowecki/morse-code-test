@@ -38,20 +38,28 @@ const morseCode = {
     ' ': '    '
 };
 
-
-const turnToLowerCase = (theInitialText) => {
-    return theInitialText.tolowerCase;
+const turnToLowerCase = (theInitialText) => { 
+    return theInitialText.toLowerCase();
 }
+
+const splitString = (stringIn) => {
+    return stringIn.split('');
+}
+
+const translateToMorse = (arrayCharacter, morseCode) => {
+    if (arrayCharacter == morseCode.arrayCharacter) {
+        return morseCode.arrayCharacter;
+    }
+}
+
 
 
 const getsTheMessage = () => {
 
+    let message = document.getElementById("message").value;
+    let lowerCaseMessage = turnToLowerCase(message);
+    let preMorseArray = splitString(lowerCaseMessage);
 
-
-
-let message = document.getElementById("message").value;
-
-let lowerCaseMessage = turnToLowerCase(message);
 
 
 let returnedMessage = document.getElementById("returnedMessage");
@@ -59,4 +67,6 @@ return returnedMessage.innerHTML = lowerCaseMessage;
 
 
 }
+
+
 
