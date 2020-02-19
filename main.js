@@ -54,6 +54,14 @@ const combineTheMorseArray = (theMorseArray) => {
     return theMorseArray.toString();
 }
 
+const removeComma = (theLongString) => {
+    return theLongString.replace(/,/g, '');
+}
+
+const convertToSpaces = (theStarredString) => {
+    return theStarredString.replace(/\*/g, ' ');
+}
+
 
 const getsTheMessage = () => {
 
@@ -62,7 +70,8 @@ const getsTheMessage = () => {
     let preMorseArray = splitString(lowerCaseMessage);
     let postMorseArray = translateToMorse(preMorseArray);
     let combinedStringWithCommas = comebineTheMorseArray(postMorseArray);
-
+    let combinedStringWithoutCommas = removeComma(combinedStringWithCommas);
+    let stringWithS = convertToSpaces(combinedStringWithoutCommas);
 
 
     let returnedMessage = document.getElementById("returnedMessage");

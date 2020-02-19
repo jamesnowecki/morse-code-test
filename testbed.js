@@ -72,3 +72,13 @@ const combineTheMorseArray = (theMorseArray) => {
 }
 
 console.log(combineTheMorseArray(MorseArray));
+
+
+
+const sillyString = ".___***,._***,__***,.***,...***,****,.__.***,._***,_.***,_***,.***,._.***,****,....***,.***,._..***,.__.***,.***,_..***,****,__***,.***,****,._..***,___***,._***,_..***,...***";
+
+const removeComma = (theLongString) => {
+    return theLongString.replace(/,/g, '');
+};
+
+console.log(removeComma(sillyString));
