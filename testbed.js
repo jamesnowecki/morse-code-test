@@ -82,3 +82,11 @@ const removeComma = (theLongString) => {
 };
 
 console.log(removeComma(sillyString));
+
+let starredString = (removeComma(sillyString));
+
+const generateSpace = (theLongString) => {
+    return theLongString.replace(/\*/g, '&nbsp');
+};
+
+console.log(generateSpace(starredString));

@@ -59,7 +59,7 @@ const removeComma = theLongString => {
 };
 
 const convertToSpaces = theStarredString => {
-    return theStarredString.replace(/\*/g, " ");
+    return theStarredString.replace(/\*/g, "&nbsp");
 };
 
 const getsTheMessage = () => {
