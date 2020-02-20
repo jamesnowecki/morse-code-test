@@ -62,6 +62,10 @@ const convertToSpaces = theStarredString => {
     return theStarredString.replace(/\*/g, "&nbsp");
 };
 
+const chopTheLast3Spaces = (theStringWithSpaces) => {
+    return theStringWithSpaces.substring(0, theStringWithSpaces.length - 15);
+}
+
 const getsTheMessage = () => {
     let message = document.getElementById("message").value;
     let lowerCaseMessage = turnToLowerCase(message);
@@ -70,7 +74,8 @@ const getsTheMessage = () => {
     let combinedStringWithCommas = combineTheMorseArray(postMorseArray);
     let combinedStringWithoutCommas = removeComma(combinedStringWithCommas);
     let stringWithSpaces = convertToSpaces(combinedStringWithoutCommas);
+    let finalMorseString = chopTheLast3Spaces(stringWithSpaces);
 
     let returnedMessage = document.getElementById("returnedMessage");
-    return (returnedMessage.innerHTML = stringWithSpaces);
+    return (returnedMessage.innerHTML = finalMorseString);
 };
