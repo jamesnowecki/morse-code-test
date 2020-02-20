@@ -67,15 +67,15 @@ const chopTheLast3Spaces = (theStringWithSpaces) => {
 }
 
 const getsTheMessage = () => {
-    let message = document.getElementById("message").value;
-    let lowerCaseMessage = turnToLowerCase(message);
-    let preMorseArray = splitString(lowerCaseMessage);
-    let postMorseArray = preMorseArray.map(translateToMorse); //works up to and inc here
-    let combinedStringWithCommas = combineTheMorseArray(postMorseArray);
-    let combinedStringWithoutCommas = removeComma(combinedStringWithCommas);
-    let stringWithSpaces = convertToSpaces(combinedStringWithoutCommas);
-    let finalMorseString = chopTheLast3Spaces(stringWithSpaces);
+    const message = document.getElementById("message").value;
+    const lowerCaseMessage = turnToLowerCase(message);
+    const preMorseArray = splitString(lowerCaseMessage);
+    const postMorseArray = preMorseArray.map(translateToMorse);
+    const combinedStringWithCommas = combineTheMorseArray(postMorseArray);
+    const combinedStringWithoutCommas = removeComma(combinedStringWithCommas);
+    const stringWithSpaces = convertToSpaces(combinedStringWithoutCommas);
+    const finalMorseString = chopTheLast3Spaces(stringWithSpaces);
 
-    let returnedMessage = document.getElementById("returnedMessage");
+    const returnedMessage = document.getElementById("returnedMessage");
     return (returnedMessage.innerHTML = finalMorseString);
 };
