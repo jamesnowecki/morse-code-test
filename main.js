@@ -125,4 +125,27 @@ const getsTheMessage = () => {
 
 // Text to morse
 
-  
+const splitMorseString = (morseString) => {
+    return morseString.split(" ", "/");
+}
+
+const translateToText = (arrayOfMorse) => {
+
+}
+
+const slashToSpaces = (longString) => {
+    return longString.replace(/\//g, "&nbsp");
+}
+
+
+const getsMorseMessage = () => {
+    const morseMessage = document.getElementById("morse-message").value;
+    const arrayOfMorseChars = splitMorseString(morseMessage);
+    const postTextArray = arrayOfMorseChars.map(translateToText);
+    const combinedTextStringWithCommas = combineTheMorseArray(postTextArray);
+    const longStringText = removeComma(combinedTextStringWithCommas);
+    const finalTextString = slashToSpaces(longStringText);
+
+    const returnedMorseMessage = document.getElementById("returnedMorseMessage");
+    return (returnedMorseMessage.innerHTML = finalTextString);
+  }
