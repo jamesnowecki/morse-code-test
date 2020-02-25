@@ -35,7 +35,8 @@ const morseCode = {
     7: '__...***',
     8: '___..***',
     9: '____.***',
-    ' ': '****'
+    ' ': '****',
+    '/': " "
 };
 
 
@@ -90,3 +91,11 @@ const generateSpace = (theLongString) => {
 };
 
 console.log(generateSpace(starredString));
+
+const testString = ".___ . .. ___ / .. .. ___ / .__ .. . "
+
+const splitMorseString = (morseString) => {
+    return morseString.split(" ");
+};
+
+console.log(splitMorseString(testString))
