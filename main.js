@@ -38,47 +38,6 @@ const morseCode = {
     " ": "****"
 };
 
-const textToMorseCode = {
-    a: "._",
-    b: "_...",
-    c: "_._.",
-    d: "_..",
-    e: ".",
-    f: ".._.",
-    g: "__.",
-    h: "....",
-    i: "..",
-    j: ".___",
-    k: "_._",
-    l: "._..",
-    m: "__",
-    n: "_.",
-    o: "___",
-    p: ".__.",
-    q: "__._",
-    r: "._.",
-    s: "...",
-    t: "_",
-    u: ".._",
-    v: "..._",
-    w: ".__",
-    x: "_.._",
-    y: "_.__",
-    z: "__..",
-    0: "_____",
-    1: ".____",
-    2: "..___",
-    3: "...__",
-    4: "...._",
-    5: ".....",
-    6: "_....",
-    7: "__...",
-    8: "___..",
-    9: "____.",
-    " ": " ",
-    "/": " "
-};
-
 // Morse to text
 
 const turnToLowerCase = theInitialText => {
@@ -129,8 +88,8 @@ const splitMorseString = (morseString) => {
     return morseString.split(" ", "/");
 }
 
-const translateToText = (arrayOfMorse) => {
-
+const translateToText = (morseObject, arrayOfMorse) => {
+    return Object.keys(morseObject).find(key => morseObject[key] === arrayOfMorse);
 }
 
 const slashToSpaces = (longString) => {
@@ -141,7 +100,7 @@ const slashToSpaces = (longString) => {
 const getsMorseMessage = () => {
     const morseMessage = document.getElementById("morse-message").value;
     const arrayOfMorseChars = splitMorseString(morseMessage);
-    const postTextArray = arrayOfMorseChars.map(translateToText);
+    const postTextArray = arrayOfMorseChars.map(translateToText(morseCode, XXXXXXXX));
     const combinedTextStringWithCommas = combineTheMorseArray(postTextArray);
     const longStringText = removeComma(combinedTextStringWithCommas);
     const finalTextString = slashToSpaces(longStringText);
