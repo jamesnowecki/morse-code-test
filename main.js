@@ -38,7 +38,7 @@ const morseCode = {
     " ": "****"
 };
 
-const textToMorseCode = {
+const morseCodeNoStars = {
     a: "._",
     b: "_...",
     c: "_._.",
@@ -76,7 +76,7 @@ const textToMorseCode = {
     8: "___..",
     9: "____.",
     " ": " ",
-    "/": " "
+    "&nbsp": "/"
 };
 
 // Morse to text
@@ -126,26 +126,34 @@ const getsTheMessage = () => {
 // Text to morse
 
 const splitMorseString = (morseString) => {
-    return morseString.split(" ", "/");
+    return morseString.split(" ");
 }
 
-const translateToText = (arrayOfMorse) => {
+const getListOfLetters = morseChar => {
+    return translateToText(morseChar)
 
 }
-
-const slashToSpaces = (longString) => {
-    return longString.replace(/\//g, "&nbsp");
+const translateToText = (morseChar) => {
+    return Object.keys(morseCodeNoStars).find(key => morseCodeNoStars[key] === morseChar);
 }
 
+// const slashToSpaces = (longString) => {
+//     return longString.replace(/\//g, "&nbsp");
+// }
 
 const getsMorseMessage = () => {
     const morseMessage = document.getElementById("morse-message").value;
+    console.log(morseMessage);
     const arrayOfMorseChars = splitMorseString(morseMessage);
-    const postTextArray = arrayOfMorseChars.map(translateToText);
+    console.log(arrayOfMorseChars);
+    const postTextArray = arrayOfMorseChars.map(getListOfLetters);
+    console.log(postTextArray);
     const combinedTextStringWithCommas = combineTheMorseArray(postTextArray);
+    console.log(combinedTextStringWithCommas);
     const longStringText = removeComma(combinedTextStringWithCommas);
-    const finalTextString = slashToSpaces(longStringText);
+    console.log(longStringText)
+    // const finalTextString = slashToSpaces(longStringText);
 
     const returnedMorseMessage = document.getElementById("returnedMorseMessage");
-    return (returnedMorseMessage.innerHTML = finalTextString);
-  }
+    return (returnedMorseMessage.innerHTML = longStringText);
+}
