@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./main.scss">
+    <link rel="stylesheet" href="./main.css">
     <script src="./main.js" async defer></script>
     <title>Document</title>
 </head>
 <body>
     <h1>Morse Code Translator</h1>
+    <h2>Text to morse translator</h2>
     <fieldset>
         <label for="message" name ="message">Your text to be translated:</label><br>
         <input type="text" name = "message" id= "message"></input>
     </fieldset>
-    <button onclick="getsTheMessage()">Translate</button>
+    <div class="button">
+        <button onclick="getsTheMessage()">Translate</button>
+    </div>
 
-    <p>Your translated resulting morse code:</p></br>
-    <P id= "returnedMessage"></P>
+    <div class="return">
+        <p>Your translated resulting morse code:</p></br>
+        <P id= "returnedMessage"></P>
+    </div>
 
 
     <h2>Morse to text translator, please use a space between individual letters, and / between words</h2>
@@ -25,10 +30,14 @@
         <label for="morse-message" name ="morse-message">Your Morse Code to be translated:</label><br>
         <input type="text" name = "morse-message" id= "morse-message"></input>
     </fieldset>
-    <button onclick="getsMorseMessage()">Translate</button>
+    <div class="button">
+        <button onclick="getsMorseMessage()">Translate</button>
+    </div>
 
-    <p>Your translated resulting text:</p></br>
-    <P id= "returnedMorseMessage"></P>
+    <div class="return">
+        <p>Your translated resulting text:</p></br>
+        <P id= "returnedMorseMessage"></P>
+    </div>
 
 
 </body>
